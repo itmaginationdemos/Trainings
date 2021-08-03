@@ -1,0 +1,1 @@
+{"name":"file1","hash":"1c9170954080bf56951c450e32a3c4f04e823d2cebe63be70e93c59f0002a024db7b15f68b86e38fd769e94cae0a6375ecf188664bd5a679b389206c6098d034","content":"-- Protected file from disk --","pass":"ppp"}

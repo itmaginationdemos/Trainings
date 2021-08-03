@@ -1,0 +1,16 @@
+{
+  "name": "day1-express",
+  "version": "1.0.0",
+  "description": "Simple service for storing and retrieving files to learn the backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "util.promisify": "^1.1.1"
+  }
+}

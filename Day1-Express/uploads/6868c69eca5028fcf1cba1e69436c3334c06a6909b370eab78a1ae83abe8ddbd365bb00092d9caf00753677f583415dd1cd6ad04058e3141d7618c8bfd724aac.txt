@@ -1,0 +1,1 @@
+{"name":"file2","hash":"f916cf4d7a3c79e61202de7a1250f6a2fcb4915f619938e97b34cf6f1eb06ed52fef5fc73bb8bae32788e3c9b14390990586ff40ac5f0fff291c8a205634cb4d","content":"-- This is file content from disk --"}

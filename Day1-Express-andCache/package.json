@@ -1,0 +1,16 @@
+{
+  "name": "day2-express-andCache",
+  "version": "1.0.0",
+  "description": "After we learned direct files access (and meta+file data in one file) are bad, we will use cache",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "util.promisify": "^1.1.1"
+  }
+}
