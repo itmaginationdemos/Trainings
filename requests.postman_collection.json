@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "e90087fc-83fd-4070-9c29-9f9e67389992",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Files",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2000/file",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"file"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get File 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2000/file/file1?pass=ppp",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"file",
+						"file1"
+					],
+					"query": [
+						{
+							"key": "pass",
+							"value": "ppp"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get File With Password",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2000/file/file1?pass=ppp",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"file",
+						"file1"
+					],
+					"query": [
+						{
+							"key": "pass",
+							"value": "ppp"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get File WithOUT Password",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2000/file/file1",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"file",
+						"file1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send File",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "img.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:2000/file?pass=test",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"file"
+					],
+					"query": [
+						{
+							"key": "pass",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Password",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2000/file/file1?pass=ppp",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"file",
+						"file1"
+					],
+					"query": [
+						{
+							"key": "pass",
+							"value": "ppp"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Uploaded File Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2000/file/file1?pass=ppp",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"file",
+						"file1"
+					],
+					"query": [
+						{
+							"key": "pass",
+							"value": "ppp"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete File",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:2000/file/img.png?pass=test",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"file",
+						"img.png"
+					],
+					"query": [
+						{
+							"key": "pass",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[DB] Get File",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2000/file/1",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"file",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[DB] Change Password Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2000/file/file1?pass=ppp",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"file",
+						"file1"
+					],
+					"query": [
+						{
+							"key": "pass",
+							"value": "ppp"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[DB] Get File With Pass",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2000/file/1",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"file",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[DB] Delete File",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:2000/file/img.png?pass=test",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"file",
+						"img.png"
+					],
+					"query": [
+						{
+							"key": "pass",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[NEST] Send File",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "img.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/file-manager?pass=test",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"file-manager"
+					],
+					"query": [
+						{
+							"key": "pass",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[NEST] Get File",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/file-manager/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"file-manager",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[NEST] Get File Meta Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "pass",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/file-manager/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"file-manager",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[NEST] Get File Meta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/file-manager/meta/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"file-manager",
+						"meta",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
