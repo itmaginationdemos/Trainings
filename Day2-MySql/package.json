@@ -1,0 +1,18 @@
+{
+  "name": "day2-database-example-with-mysql",
+  "version": "1.0.0",
+  "description": "Now we will store files on drive, and theirs meta data in the database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "mysql2": "^2.2.5",
+    "util.promisify": "^1.1.1"
+  }
+}
