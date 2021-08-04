@@ -1,94 +1,94 @@
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const promisify = require('util.promisify');
-const crypto = require('crypto');
+const express = require("express");
+const fs = require("fs");
+const path = require("path");
+const promisify = require("util.promisify");
+const crypto = require("crypto");
 
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 const readDir = promisify(fs.readdir);
 const unlink = promisify(fs.unlink);
 
-console.log('Arguments', process.argv);
+console.log("Arguments", process.argv);
 
 const app = express();
 
 const getExistingFilesNames = async (files) => {
-    const ret = [];
-    for (let i = 0; i < files.length; ++i) {
-        const file = await readFile(path.join(__dirname, 'uploads', files[i]));
-        const data = JSON.parse(file);
+  const ret = [];
+  for (let i = 0; i < files.length; ++i) {
+    const file = await readFile(path.join(__dirname, "uploads", files[i]));
+    const data = JSON.parse(file);
 
-        ret.push(data.name + (data.pass ? '*' : ''));
-    }
+    ret.push(data.name + (data.pass ? "*" : ""));
+  }
 
-    return ret;
-}
+  return ret;
+};
 const getFileDiskName = (userName) => {
-    const hasher = crypto.createHash('whirlpool');
+  const hasher = crypto.createHash("whirlpool");
 
-    return hasher.update(userName).digest('hex');
+  return hasher.update(userName).digest("hex");
+};
+
+{
+  // loggers
+  // log API request
+  app.use((req, res, next) => {
+    console.log("Request method", req.method, "received for", req.path);
+
+    next();
+  });
+  // log empty file request(additional)
+  app.get("/file", (req, res, next) => {
+    console.log("Empty file requested");
+
+    next();
+  });
 }
 
-{ // loggers
-// log API request
-    app.use((req, res, next) => {
-        console.log('Request method', req.method, 'received for', req.path);
+app.get("/file", async (req, res) => {
+  const files = await readDir(path.join(__dirname, "uploads"));
+  const names = await getExistingFilesNames(files);
 
-        next();
-    });
-// log empty file request(additional)
-    app.get('/file', (req, res, next) => {
-        console.log('Empty file requested');
-
-        next();
-    });
-}
-
-app.get('/file', async (req, res) => {
-    const files = await readDir(path.join(__dirname, 'uploads'));
-    const names = await getExistingFilesNames(files);
-
-    return res.json(names);
+  return res.json(names);
 });
-app.put('/file/:name/:content?', async (req, res) => {
-    const hash = getFileDiskName(req.params.name);
-    const obj = JSON.stringify({
-        name: req.params.name,
-        hash,
-        content: req.params.content,
-        pass: undefined,
-    });
+app.put("/file/:name/:content?", async (req, res) => {
+  const hash = getFileDiskName(req.params.name);
+  const obj = JSON.stringify({
+    name: req.params.name,
+    hash,
+    content: req.params.content,
+    pass: undefined,
+  });
 
-    try {
-        await writeFile(path.join(__dirname, 'uploads', `${hash}.txt`), obj);
+  try {
+    await writeFile(path.join(__dirname, "uploads", `${hash}.txt`), obj);
 
-        return res.send(req.params.content);
-    } catch (error) {
-        res.status(500);
-        res.send(error.message);
-    }
+    return res.send(req.params.content);
+  } catch (error) {
+    res.status(500);
+    res.send(error.message);
+  }
 });
-app.delete('/file/:name', async (req, res, next) => {
-    const hash = getFileDiskName(req.params.name);
-    const fileName = path.join(__dirname, 'uploads', `${hash}.txt`);
+app.delete("/file/:name", async (req, res, next) => {
+  const hash = getFileDiskName(req.params.name);
+  const fileName = path.join(__dirname, "uploads", `${hash}.txt`);
 
-    try {
-        await unlink(fileName);
-        res.send(true);
-    } catch (error) {
-        res.status(500);
-        res.send(error.message);
-    }
+  try {
+    await unlink(fileName);
+    res.send(true);
+  } catch (error) {
+    res.status(500);
+    res.send(error.message);
+  }
 });
 
 // get
 // put
 
 app.listen(2000, () => {
-    console.log('App is listening on', 2000);
+  console.log("App is listening on", 2000);
 });
-
 
 /*
     * File list (get list)

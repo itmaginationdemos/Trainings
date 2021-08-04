@@ -22,8 +22,10 @@ describe('AppController (e2e)', () => {
       .expect('Hello World!');
   });
 
-  it ('/file-manager/ (PUT) Send file', async () => {
-    const ret = await request(app.getHttpServer()).put('/file-manager/').attach('file', Buffer.from('Jestem sobie pliczek'), 'test.txt');
+  it('/file-manager/ (PUT) Send file', async () => {
+    const ret = await request(app.getHttpServer())
+      .put('/file-manager/')
+      .attach('file', Buffer.from('Jestem sobie pliczek'), 'test.txt');
 
     expect(ret.body.name).toEqual('test.txt');
     expect(ret.body.size).toEqual(20);
@@ -38,11 +40,5 @@ describe('AppController (e2e)', () => {
     });
   });
 
-  it ('/get pliku', () => {
-
-  });
-
-
-
-
+  it('/get pliku', () => {});
 });

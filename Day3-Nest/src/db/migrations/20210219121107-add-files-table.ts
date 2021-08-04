@@ -1,27 +1,32 @@
-import {QueryInterface} from "sequelize";
-import {NotImplementedException} from "@nestjs/common";
+import { QueryInterface } from 'sequelize';
+import { NotImplementedException } from '@nestjs/common';
 
 export default {
   up: async (queryInterface: QueryInterface, Sequelize: any) => {
     const tablesInDb = await queryInterface.showAllTables();
     const tableName = 'files';
 
-    if (tablesInDb.indexOf(tableName) === -1) { // tylko jak nie ma tabeli
+    if (tablesInDb.indexOf(tableName) === -1) {
+      // tylko jak nie ma tabeli
       await queryInterface.createTable(tableName, {
-        id: { // kolumna ,,tajna'' bo sequelize dodaje ją samemu - chyba ze mu powiemy by tego nie robił
+        id: {
+          // kolumna ,,tajna'' bo sequelize dodaje ją samemu - chyba ze mu powiemy by tego nie robił
           type: Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement: true,
         },
-        createdAt: { // kolumna ,,tajna'' bo sequelize dodaje ją samemu - chyba ze mu powiemy by tego nie robił
+        createdAt: {
+          // kolumna ,,tajna'' bo sequelize dodaje ją samemu - chyba ze mu powiemy by tego nie robił
           type: Sequelize.DATE,
           allowNull: true,
         },
-        updatedAt: { // kolumna ,,tajna'' bo sequelize dodaje ją samemu - chyba ze mu powiemy by tego nie robił
+        updatedAt: {
+          // kolumna ,,tajna'' bo sequelize dodaje ją samemu - chyba ze mu powiemy by tego nie robił
           type: Sequelize.DATE,
           allowNull: true,
         },
-        deletedAt: { // kolumna ,,tajna'' bo sequelize dodaje ją samemu - chyba ze mu powiemy by tego nie robił
+        deletedAt: {
+          // kolumna ,,tajna'' bo sequelize dodaje ją samemu - chyba ze mu powiemy by tego nie robił
           type: Sequelize.DATE,
           allowNull: true,
         },
@@ -61,5 +66,5 @@ export default {
      * Example:
      * await queryInterface.dropTable('users');
      */
-  }
+  },
 };

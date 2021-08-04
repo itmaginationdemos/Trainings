@@ -1,5 +1,5 @@
-import {QueryInterface} from "sequelize";
-import {NotImplementedException} from "@nestjs/common";
+import { QueryInterface } from 'sequelize';
+import { NotImplementedException } from '@nestjs/common';
 
 export default {
   up: async (queryInterface: QueryInterface, Sequelize: any) => {
@@ -7,7 +7,9 @@ export default {
     console.log(tablesInDb);
 
     if (tablesInDb.indexOf('SequelizeMeta') !== -1) {
-      const tableColumns = Object.keys(await queryInterface.describeTable('SequelizeMeta'));
+      const tableColumns = Object.keys(
+        await queryInterface.describeTable('SequelizeMeta'),
+      );
 
       if (tableColumns.indexOf('createdAt') === -1) {
         queryInterface.addColumn('SequelizeMeta', 'createdAt', {
@@ -26,5 +28,5 @@ export default {
      * Example:
      * await queryInterface.dropTable('users');
      */
-  }
+  },
 };
