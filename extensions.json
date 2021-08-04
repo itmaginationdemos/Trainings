@@ -1,0 +1,6 @@
+{
+    "recommendations": [
+        "VisualStudioExptTeam.vscodeintellicode",
+        "ms-azuretools.vscode-docker"
+    ]
+}
