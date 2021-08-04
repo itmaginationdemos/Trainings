@@ -1,5 +1,5 @@
 {
-  "name": "day2-express-andCache",
+  "name": "day2-express-and-cache",
   "version": "1.0.0",
   "description": "After we learned direct files access (and meta+file data in one file) are bad, we will use cache",
   "main": "index.js",
