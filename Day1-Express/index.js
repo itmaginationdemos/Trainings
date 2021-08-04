@@ -51,6 +51,7 @@ app.get('/file', async (req, res) => {
 
     return res.json(names);
 });
+
 app.put('/file/:name/:content?', async (req, res) => {
     const hash = getFileDiskName(req.params.name);
     const obj = JSON.stringify({
@@ -115,6 +116,7 @@ app.post('/file/:name', async(req, res) => {
         res.send(err.message);
     }
 })
+
 app.get('/file/:name', async (req, res) => {
     const hash = getFileDiskName(req.params.name);
     const fileName = path.join(__dirname, 'uploads', `${hash}.txt`);

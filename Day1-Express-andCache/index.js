@@ -43,9 +43,6 @@ const fillCache = async () => {
     console.log(cache);
 }
 
-
-// To co tu jest idzie w funkcje
-
 function start () {
 
     const getFileDiskName = (userName) => {
@@ -168,6 +165,7 @@ function start () {
             return cache[needle][0];
         }
     }
+    
     app.get('/file/:name', async (req, res) => {
         const file = await getMetaFile(req.params.name);
         if (!file) {
