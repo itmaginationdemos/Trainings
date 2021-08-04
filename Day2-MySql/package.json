@@ -4,6 +4,8 @@
   "description": "Now we will store files on drive, and theirs meta data in the database",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon index.js",
+    "run": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,5 +16,8 @@
     "multer": "^1.4.2",
     "mysql2": "^2.2.5",
     "util.promisify": "^1.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
