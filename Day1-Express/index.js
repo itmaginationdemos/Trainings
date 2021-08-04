@@ -69,6 +69,7 @@ app.put('/file/:name/:content?', async (req, res) => {
         res.send(error.message);
     }
 });
+
 app.delete('/file/:name', async (req, res, next) => {
     const hash = getFileDiskName(req.params.name);
     const fileName = path.join(__dirname, 'uploads', `${hash}.txt`);

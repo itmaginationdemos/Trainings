@@ -4,9 +4,10 @@
   "description": "Simple service for storing and retrieving files to learn the backend",
   "main": "index.js",
   "scripts": {
+    "dev": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "ITMAGINATION",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
