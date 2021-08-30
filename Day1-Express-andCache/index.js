@@ -56,7 +56,7 @@ function start() {
 
   {
     // loggers
-    // log API request
+    // log an API request
     app.use((req, res, next) => {
       console.log("Request method", req.method, "received for", req.path);
 
